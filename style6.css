@@ -1,0 +1,268 @@
+ /* Pomodoro timer styling :-  */
+ @import url('https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Roboto+Slab:wght@100..900&family=Tomorrow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family:"Outfit", 'Arial', sans-serif;
+    background:linear-gradient(-135deg, #06e3d4,#065140);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 90%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 10px 15px 20px rgba(0, 0, 0, 0.2);
+    background: rgba(0,0,0,0.3);
+}
+
+/* Left Section (Timer) */
+.timer {
+    flex: 1;
+    background-color: #004d40;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    overflow: hidden;  
+}
+
+.timer h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px; /* Add some spacing */
+    text-shadow: 4px 4px 6px rgba( 0, 0, 0, 0.5);
+}
+.time-display {
+    position: relative;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3),0 0 20px rgbs(6,227,212,0.5);
+    font-size: 3rem;
+    font-weight: bold;
+    background-color: #ffffff;
+    color: #004d40;
+}
+
+#shortBreakBtn,
+#longBreakBtn {
+    border: none;
+    display: inline-block;
+    background-color: #179c8d;
+    color: white;
+    height: 40px; /* Reduce height */
+    width: 70px; /* Reduce width */
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 5px; /* Reduce margin */
+    transition: all 0.3s ease;
+    font-weight: bold;
+}
+/* To Add hover effect to the buttons  */
+#shortBreakBtn:hover,
+#longBreakBtn:hover {
+    background: #0097a7;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.buttons button,
+#restartBtn {
+    margin-top: 10px; /* Reduce margin */
+    padding: 10px 15px; /* Reduce padding */
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    background-color: #179c8d;
+    color: white;
+    transition: all 0.3s ease;
+}
+.buttons button:hover,
+#restartBtn:hover {
+    background: #065140;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+#add,
+#less,
+#startBtn,
+#stopBtn,
+#restartBtn {
+    background-color: #179c8d;
+    color: white;
+ }
+ button:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+} 
+
+/* Right Section (To-Do List) */
+.block {
+    flex: 1;
+    background:rgba(255,255,255,0.9);
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; /* Align to the start */
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    color: #004d40;
+}
+.block h1{
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-shadow: 4px 4px 6px rgba(0,0,0,0.3);
+}
+
+.read input[type="text"] {
+    width: calc(90% - 80px);
+    padding:8px 12px;
+    margin-right: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+}
+
+.read button {
+    padding: 9px 15px;
+    margin-left: 5px;
+    background-color: #004d40;
+    color: white;
+    font-size: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Input box */
+.read input {
+    height: 30px;
+    width: 60px;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Displaying the task */
+/* .text ul {
+    position: relative;
+    font-size: 19px;
+    text-align: left;
+} */
+.text{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 10px 0;
+    width:100%; 
+}
+.task-list li{
+ font-size: 20px;
+ display: flex;
+ justify-content: space-around;
+ /* align-items: center; */
+ text-align: left;
+ color:#004d40;
+}
+.task-list button{
+    position: absolute;
+    right: 10px;
+    text-align: right;
+}
+.edit, .delete {
+    margin-left: 5px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    background-color: #004d40;
+    color: white;
+    border: none; 
+    cursor: pointer;
+    margin-left: 10px;
+    text-align: right;
+}
+ .task-list li{
+    font-size:larger;
+ }
+.yn button {
+    margin-top: 10px; /* Reduce margin */
+    padding: 8px 12px; /* Reduce padding */
+    background-color: #004d40;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+}
+ 
+/* Responsive Styles */
+
+@media only screen and (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .timer {
+        flex: 1;
+        padding: 10px;
+    }
+
+    .block {
+        flex: 1;
+        padding: 10px;
+    }
+
+    #shortBreakBtn,
+    #longBreakBtn {
+        width: 40%;
+        margin: 5px;
+        height: 40px; /* Adjust height */
+    }
+
+    .time-display {
+        width: 150px; /* Further adjust timer size */
+        height: 150px; /* Further adjust timer size */
+        font-size: 2rem; /* Further reduce font size */
+        margin-bottom: 5px; /* Further reduce margin */
+    }
+
+    .timer h1 {
+        font-size: 1.5rem;
+        margin-bottom: 5px; /* Further reduce margin */
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .time-display {
+        width: 120px; /* Even smaller timer size */
+        height: 120px; /* Even smaller timer size */
+    }
+
+    .timer h1 {
+        font-size: 1.3rem; /* Even smaller font size */
+    }
+
+    .read input[type="text"] {
+        width: calc(100% - 50px); /* Adjust input width */
+    }
+
+    .read button {
+        padding: 4px 8px; /* Even smaller button size */
+        font-size: 14px; /* Adjust font size */
+    }
+}
